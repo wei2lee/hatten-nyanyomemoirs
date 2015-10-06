@@ -1,0 +1,440 @@
+// out: ../css/main.css, compress:false, strictMath:false
+
+@bower_component_path:"../bower_components/";
+
+// Core variables and mixins
+@import "variables.less";
+@import "@{bower_component_path}/bootstrap/less/mixins.less";
+
+// Reset and dependencies
+@import "@{bower_component_path}/bootstrap/less/normalize.less";
+@import "@{bower_component_path}/bootstrap/less/print.less";
+@import "@{bower_component_path}/bootstrap/less/glyphicons.less";
+
+// Core CSS
+@import "@{bower_component_path}/bootstrap/less/scaffolding.less";
+@import "@{bower_component_path}/bootstrap/less/type.less";
+@import "@{bower_component_path}/bootstrap/less/code.less";
+@import "@{bower_component_path}/bootstrap/less/grid.less";
+@import "@{bower_component_path}/bootstrap/less/tables.less";
+@import "@{bower_component_path}/bootstrap/less/forms.less";
+@import "@{bower_component_path}/bootstrap/less/buttons.less";
+
+// Components
+@import "@{bower_component_path}/bootstrap/less/component-animations.less";
+@import "@{bower_component_path}/bootstrap/less/dropdowns.less";
+@import "@{bower_component_path}/bootstrap/less/button-groups.less";
+@import "@{bower_component_path}/bootstrap/less/input-groups.less";
+@import "@{bower_component_path}/bootstrap/less/navs.less";
+@import "@{bower_component_path}/bootstrap/less/navbar.less";
+@import "@{bower_component_path}/bootstrap/less/breadcrumbs.less";
+@import "@{bower_component_path}/bootstrap/less/pagination.less";
+@import "@{bower_component_path}/bootstrap/less/pager.less";
+@import "@{bower_component_path}/bootstrap/less/labels.less";
+@import "@{bower_component_path}/bootstrap/less/badges.less";
+@import "@{bower_component_path}/bootstrap/less/jumbotron.less";
+@import "@{bower_component_path}/bootstrap/less/thumbnails.less";
+@import "@{bower_component_path}/bootstrap/less/alerts.less";
+@import "@{bower_component_path}/bootstrap/less/progress-bars.less";
+@import "@{bower_component_path}/bootstrap/less/media.less";
+@import "@{bower_component_path}/bootstrap/less/list-group.less";
+@import "@{bower_component_path}/bootstrap/less/panels.less";
+@import "@{bower_component_path}/bootstrap/less/responsive-embed.less";
+@import "@{bower_component_path}/bootstrap/less/wells.less";
+@import "@{bower_component_path}/bootstrap/less/close.less";
+
+// Components w/ JavaScript
+@import "@{bower_component_path}/bootstrap/less/modals.less";
+@import "@{bower_component_path}/bootstrap/less/tooltip.less";
+@import "@{bower_component_path}/bootstrap/less/popovers.less";
+@import "@{bower_component_path}/bootstrap/less/carousel.less";
+
+// Utility classes
+@import "@{bower_component_path}/bootstrap/less/utilities.less";
+@import "@{bower_component_path}/bootstrap/less/responsive-utilities.less";
+
+
+@import "@{bower_component_path}/fontawesome/less/variables.less";
+@fa-font-path:"@{bower_component_path}/fontawesome/fonts";
+@import "@{bower_component_path}/fontawesome/less/mixins.less";
+@import "@{bower_component_path}/fontawesome/less/path.less";
+@import "@{bower_component_path}/fontawesome/less/core.less";
+@import "@{bower_component_path}/fontawesome/less/larger.less";
+@import "@{bower_component_path}/fontawesome/less/fixed-width.less";
+@import "@{bower_component_path}/fontawesome/less/list.less";
+@import "@{bower_component_path}/fontawesome/less/bordered-pulled.less";
+@import "@{bower_component_path}/fontawesome/less/animated.less";
+@import "@{bower_component_path}/fontawesome/less/rotated-flipped.less";
+@import "@{bower_component_path}/fontawesome/less/stacked.less";
+@import "@{bower_component_path}/fontawesome/less/icons.less";
+
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Helper
+   ========================================================================== */
+//For editing only
+* {
+//    box-sizing: border-box;
+//    border:solid 1px red;
+}
+
+//* { transition:all 0.3s; }
+.create-padding(@word, @value) {
+    .padding-@{word} {
+        padding:@value;   
+    }
+
+    .padding-top-@{word} {
+        padding-top:@value;   
+    }
+
+    .padding-bottom-@{word} { 
+        padding-bottom:@value;   
+    }
+
+    .padding-left-@{word} {
+        padding-left:@value;   
+    }
+
+    .padding-right-@{word} {
+        padding-right:@value;   
+    }
+
+    .padding-horizontal-@{word} {
+        padding-left: @value;
+        padding-right: @value;
+    }
+
+    .padding-vertical-@{word} {
+        padding-top: @value;
+        padding-bottom: @value;
+    }
+}
+.create-margin(@word, @value) {
+    .margin-@{word} {
+        margin:@value;   
+    }
+
+    .margin-top-@{word} {
+        margin-top:@value;   
+    }
+
+    .margin-bottom-@{word} {
+        margin-bottom:@value;   
+    }
+
+    .margin-left-@{word} {
+        margin-left:@value;   
+    }
+
+    .margin-right-@{word} {
+        margin-right:@value;   
+    }
+
+    .margin-horizontal-@{word} {
+        margin-left: @value;
+        margin-right: @value;
+    }
+    .margin-vertical-@{word} {
+        margin-top: @value;
+        margin-bottom: @value;
+    }
+}
+
+
+
+.create-padding(0, 0);
+.create-padding(xxxs, 2px);
+.create-padding(xxs, 5px);
+.create-padding(xs, 10px);
+.create-padding(sm, 15px);
+.create-padding(md, 20px);
+.create-padding(lg, 40px);
+.create-padding(xlg, 60px);
+.create-padding(xxlg, 90px);
+
+.create-margin(0, 0);
+.create-margin(xxxs, 2px);
+.create-margin(xxs, 5px);
+.create-margin(xs, 10px);
+.create-margin(sm, 15px);
+.create-margin(md, 20px);
+.create-margin(lg, 40px);
+.create-margin(xlg, 60px);
+.create-margin(xxlg, 90px);
+//
+//.create-padding(10px, md)
+
+/* ==========================================================================
+   Main Layout
+   ========================================================================== */
+//background: color image position/size repeat origin clip attachment initial|inherit;
+
+
+html, body {
+    width:100%; height:100%;
+//    overflow:hidden;
+    margin:0;
+    padding:0;
+    position:relative;
+    color:#787878;
+    //background-color:#00A99C;
+}
+body {
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    -webkit-overflow-scrolling: touch;
+}
+
+ul, li {
+padding:0;
+margin:0;
+}
+ul {
+    list-style:none;
+}
+
+.vertical-center-container {
+    position:relative;
+}
+.vertical-center-content {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.nowrap {
+    display:inline-block;
+}
+.inline-block {
+    display:inline-block;   
+}
+
+.responsive-container {
+    position:relative;
+    >canvas:not(last-child) {
+        position:relative;
+        width:100%;
+        height:auto;
+        z-index:1;
+    }
+    >.responsive-content {
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        z-index:2;
+    }
+} 
+
+.circle {
+    border-radius: 50%;
+    /* width and height can be anything, as long as they're equal */
+} 
+
+/* scroll fixes */
+.modal-open .modal {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  overflow-y: scroll;
+}
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline, .has-error.radio label, .has-error.checkbox label, .has-error.radio-inline label, .has-error.checkbox-inline label {
+  color: @brand-danger;
+}
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline, .has-success.radio label, .has-success.checkbox label, .has-success.radio-inline label, .has-success.checkbox-inline label {
+  color: @brand-success;
+}
+.has-error .form-control-feedback {
+  color: @brand-danger;
+}
+.has-success .form-control-feedback {
+  color: @brand-success;
+}
+
+.form-horizontal .has-feedback [for="agree"] .form-control-feedback {
+    right: 0px !important;
+}
+.form-horizontal .has-feedback [for="agree"]  {
+    padding-right:15px;
+}
+
+#main-container {
+    padding-top:31px;   
+    
+    .container.content {
+        .margin-bottom-xxlg;
+        .margin-top-md;
+    }
+}
+
+@media screen and (min-width:@screen-sm-min) {
+    .navbar-nav > li > a {
+        padding-top: 30px;
+        padding-bottom: 0px;
+    }
+}
+
+
+
+
+nav {
+    .small-icon-btn {
+        a {
+            @media screen and (min-width:@screen-sm-min) {
+                padding-left:2px !important;
+                padding-right:2px !important;
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Page Layout
+   ========================================================================== */
+#headline {
+    
+    
+    .headline-bg {
+        background:transparent url(../img/header_bg.png) center center;
+        background-size:cover;
+        height:700px;
+        position:relative;
+    }
+    
+    .headline-logo {
+        width:54%;
+        height:auto;
+        position:absolute;
+        top: 15%;
+        left: 40%;
+    }
+    .headline-1 {
+        width: 80%;
+        height: auto;
+        position: absolute;
+        top: 60%;
+        left: 5%;
+    }
+    .headline-2 {
+        width: 88%;
+        height: auto;
+        position: absolute;
+        top: 70%;
+        left: 6%;
+    }
+    @media screen and (min-width:@screen-xs-min) {
+        .headline-logo {
+            width:40%;
+            height:auto;
+            position:absolute;
+            top: 13%;
+            left: 45%;
+        }
+        .headline-1 {
+            width: 62%;
+            height: auto;
+            position: absolute;
+            top: 60%;
+            left: 10%;
+        }
+        .headline-2 {
+            width: 62%;
+            height: auto;
+            position: absolute;
+            top: 74%;
+            left: 14%;
+        }
+    }
+    
+    @media screen and (min-width:@screen-md-min) {
+        .headline-logo {
+            width:27%;
+            height:auto;
+            position:absolute;
+            top: 12%;
+            left: 48%;
+        }
+        .headline-1 {
+            width: 46%;
+            height: auto;
+            position: absolute;
+            top: 63%;
+            left: 16%;
+        }
+        .headline-2 {
+            width: 36%;
+            height: auto;
+            position: absolute;
+            top: 78%;
+            left: 22%;
+        }
+    }
+}
+
+#map {
+    canvas {
+        height:8;
+        @media screen and (min-width:480px) {
+            height:5;
+        }
+    }
+}
+
+#form {
+    .control-label {
+        
+    }
+    text-align:left;  
+    
+    
+    .btn {
+        .padding-horizontal-lg;
+        color:#fff;
+        background-color:#00A99C;
+        border:none;
+    }
+}
+
+footer {
+    background-color:#00A99C;
+    color:#fff;
+    
+    font-size:1.0em;
+    .container { .padding-vertical-xs; }
+    @media screen and (min-width:@screen-lg-min) {
+        font-size:1.3em;   
+        .container { .padding-vertical-md; }
+    }
+    
+    a {
+        color:#fff;   
+        &:hover {
+            color:#fff;   
+        }
+    }
+    
+    
+}
+
+/* ==========================================================================
+   Policy Page Layout
+   ========================================================================== */
+.policy {
+    h4 {
+        color:#444;
+        margin-top:20px;
+        margin-bottom:20px;
+        text-align:center;
+    }
+    
+    .pdpParagraph {
+        margin-bottom:60px;
+    }
+}
